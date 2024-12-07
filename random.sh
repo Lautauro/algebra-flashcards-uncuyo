@@ -52,31 +52,31 @@ abrir_pagina_azar() {
 			# Añadir al archivo log
 			add_log "${unidad},${pagina},$(basename "${file}")"
 
-			# Cerrar docuemento
+			# Cerrar documento
 			if [[ $pdfid != "-1" ]]; then
 				kill $pdfid 2> /dev/null
 			fi
 
 			xpdf -title "Unidad ${unidad}" "$file" $pagina 2> /dev/null &
-			# Guardar PID del docuemento abierto
+			# Guardar PID del documento abierto
 			pdfid=$(echo $!)
 		else
 			clear
-			echo "Ya leiste las ${cantidad_de_paginas} cartas de la unidad ${unidad}."
+			echo "Ya leíste las ${cantidad_de_paginas} cartas de la unidad ${unidad}."
 			read -p $'\nPresione ENTER para continuar.'
 		fi
 	fi
 }
 
 imprimir_menu() {
-	echo "ÁLGEBRA LINEAL - FING UNCUYO 2024 - Lautaro de Vega"
+	echo "ÁLGEBRA LINEAL - FING LCC UNCUYO 2024 - Lautaro de Vega"
 	echo
 	echo "[1] Fundamentos:"
 	echo $'\t[1.1] Rudimentos de Lógica Matemática'
 	echo $'\t[1.2] Combinatoria y el Principio de Inducción'
 	echo $'\t[1.3] Números complejos'
 	echo "[2] Sistemas de ecuaciones lineales:"
-	echo $'\t[2.1] Sistemas de Ecuaciones Lineales-'
+	echo $'\t[2.1] Sistemas de Ecuaciones Lineales'
 	echo $'\t[2.2] Espacios Vectoriales'
 	echo "[3] Matrices y determinantes"
 	echo "[4] Transformaciones lineales"
@@ -109,7 +109,7 @@ do
 	fi
 
 	# Ingresar unidad
-	read -p "Indique la unidad con la que desear trabajar: " unidad
+	read -p "Indique la unidad con la que desea trabajar: " unidad
 
 	# Utilizar la unidad previamente ingresada.
 	if [[ $unidad = "" ]]; then
