@@ -1,1 +1,4 @@
+# Ignorar log del usuario
 .log
+# Ignorar archivos temporales ODT
+.~lock.*
